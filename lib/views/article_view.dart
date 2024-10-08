@@ -97,13 +97,19 @@ class _ArticleViewState extends State<ArticleView> {
                   end: Alignment.bottomRight,
                 ),
               ),
-              child: ListView.builder(
-                itemCount: snapshot.data!.length,
-                itemBuilder: (context, index) {
-                  return ArticleCard(
-                    article: snapshot.data![index],
-                  );
-                },
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) {
+                        return ArticleCard(
+                          article: snapshot.data![index],
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             );
           } else {
