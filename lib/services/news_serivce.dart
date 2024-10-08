@@ -19,6 +19,7 @@ class NewsSerivce {
             image: article['urlToImage'],
             author: article['author'] ?? "no author",
             date: article['publishedAt'] ?? "no date",
+            url: article['url'] ?? "no url",
           );
           articles.add(model);
         }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_news_app/models/article_model.dart';
 import 'package:flutter_news_app/services/news_serivce.dart';
+import 'package:flutter_news_app/views/web_view.dart';
 import 'package:flutter_news_app/widgets/article_card.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
@@ -103,8 +104,17 @@ class _ArticleViewState extends State<ArticleView> {
                     child: ListView.builder(
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
-                        return ArticleCard(
-                          article: snapshot.data![index],
+                        final article = snapshot.data![index];
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      WebView(url: article.url),
+                                ));
+                          },
+                          child: ArticleCard(article: article),
                         );
                       },
                     ),

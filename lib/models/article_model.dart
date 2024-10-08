@@ -4,7 +4,7 @@ class ArticleModel {
   final String image;
   final String author;
   final String date;
- // final String url;
+ final String url;
 
   ArticleModel({
     required this.title,
@@ -12,6 +12,6 @@ class ArticleModel {
     required this.image,
     required this.author,
     required this.date,
-    //required this.url,
+    required this.url,
   });
 }
